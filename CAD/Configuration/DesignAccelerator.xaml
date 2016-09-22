@@ -170,7 +170,7 @@
             </Expander>
         </Grid>
         <Border Grid.Column="1"
-        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0" BorderThickness="0,0,0,1" BorderBrush="#FFABADB3">
+        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0" BorderThickness="0,0,0,1" BorderBrush="#FFABADB3" VerticalAlignment="Top" Background="Black">
             <Grid x:Name="grdRight"
         		Background="#FFF0F0F0">
                 <Grid.RowDefinitions>
@@ -214,7 +214,7 @@
         			IsEnabled="{Binding SingleElementIsSelected}"
         			x:Name="FILENAME"
         			Text="{WPF:ValidatedBinding Prop[DocNumber].Value}"
-        			Visibility="{Binding NumSchmFieldsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=DSNumSchmsCtrl}" BorderThickness="0,1,1,1" />
+        			Visibility="{Binding NumSchmFieldsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=DSNumSchmsCtrl}" />
             </Grid>
         </Border>
         <!--Grid for Data Sheet-->

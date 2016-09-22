@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DynamicsProperties>
   <DynamicPropertiesCategory Category="3D component">
-    <DynamicProperty Hidden="True">Ident Number</DynamicProperty>
+    <DynamicProperty>Ident Number</DynamicProperty>
     <DynamicProperty>Title</DynamicProperty>
     <DynamicProperty>Description</DynamicProperty>
     <DynamicProperty>Part Number</DynamicProperty>
@@ -13,6 +13,7 @@
     <DynamicProperty>Semi finished</DynamicProperty>
     <DynamicProperty>Stock Number</DynamicProperty>
     <DynamicProperty Hidden="True">G_L</DynamicProperty>
+    <DynamicProperty Hidden="True">PL</DynamicProperty>
     <DynamicProperty>Source File</DynamicProperty>
   </DynamicPropertiesCategory>
   <DynamicPropertiesCategory Category="Engineering">
@@ -37,9 +38,9 @@
   </DynamicPropertiesCategory>
   <DynamicPropertiesCategory Category="Drawing Inventor">
     <DynamicProperty>Ident Number</DynamicProperty>
-    <DynamicProperty>Title</DynamicProperty>
-    <DynamicProperty>Description</DynamicProperty>
-    <DynamicProperty>Part Number</DynamicProperty>
+    <DynamicProperty Hidden="True">Title</DynamicProperty>
+    <DynamicProperty Hidden="True">Description</DynamicProperty>
+    <DynamicProperty Hidden="True">Part Number</DynamicProperty>
     <DynamicProperty>Project Number</DynamicProperty>
     <DynamicProperty>Material</DynamicProperty>
     <DynamicProperty>Weight</DynamicProperty>
@@ -48,5 +49,25 @@
     <DynamicProperty>Sheet</DynamicProperty>
     <DynamicProperty>Format</DynamicProperty>
     <DynamicProperty>Source File</DynamicProperty>
+  </DynamicPropertiesCategory>
+  <DynamicPropertiesCategory Category="3D Komponenten">
+    <DynamicProperty>Title</DynamicProperty>
+    <DynamicProperty>Titel EN</DynamicProperty>
+    <DynamicProperty>Description</DynamicProperty>
+    <DynamicProperty>Part Number</DynamicProperty>
+    <DynamicProperty>Material</DynamicProperty>
+    <DynamicProperty>Abmessung/Halbzeug</DynamicProperty>
+    <DynamicProperty>Halbzeug</DynamicProperty>
+    <DynamicProperty>Bestandsnummer</DynamicProperty>
+    <DynamicProperty>Gewicht</DynamicProperty>
+    <DynamicProperty>EV-Kennung</DynamicProperty>
+    <DynamicProperty>Dicke/Durchmesser</DynamicProperty>
+    <DynamicProperty>Werksnorm</DynamicProperty>
+    <DynamicProperty>Breite</DynamicProperty>
+    <DynamicProperty>Länge</DynamicProperty>
+    <DynamicProperty>Name des Bauteiltyps</DynamicProperty>
+    <DynamicProperty>Identnummer</DynamicProperty>
+    <DynamicProperty>Entstanden aus</DynamicProperty>
+    <DynamicProperty Hidden="True">G_L</DynamicProperty>
   </DynamicPropertiesCategory>
 </DynamicsProperties>

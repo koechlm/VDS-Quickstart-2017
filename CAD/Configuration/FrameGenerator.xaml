@@ -91,6 +91,9 @@
             <Setter Property="BorderBrush" Value="Gray" />
             <Setter Property="BorderThickness" Value="0,1,1,0" />
         </Style>
+        <Style x:Key="ButtonGridStyle" TargetType="{x:Type Grid}">
+            <Setter Property="Margin" Value="0,15,2,5" />
+        </Style>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </WPF:DSWindow.Resources>
     <WPF:DSWindow.InputBindings>
@@ -190,7 +193,7 @@
             </Expander>
         </Grid>
         <Border Grid.Column="1"
-        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0">
+        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0" BorderThickness="0,0,0,1" BorderBrush="#FFABADB3" VerticalAlignment="Top">
             <Grid x:Name="grdRight"
         		Background="#FFF0F0F0">
                 <Grid.RowDefinitions>

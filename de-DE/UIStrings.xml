@@ -135,6 +135,9 @@
   <!--Inventor custom iProperties Displaynames for dynamic properties-->
   <!--use to change display name for localization or user friendly naming-->
   <!--<UIString ID="aim_description1">Beschreibung Kurztext</UIString>-->
+  <UIString ID="Title_EN">Titel EN</UIString>
+  <UIString ID="Title">Titel</UIString>
+  <!--Inventor custom iProperties Displaynames for dynamic properties-->
   
   <!--Vault Categories-->
   <UIString ID="CAT1">Konstruktion</UIString>
@@ -198,6 +201,7 @@
     <!--Quickstart Help And Documentation end-->
     
     <!--Quickstart ShortCut Pane-->
+      <UIString ID="MSDCE_LBL88">Verknüpfungen</UIString>
       <UIString ID="MSDCE_BTN2">Aktivieren</UIString>
       <UIString ID="MSDCE_BTN3">Löschen</UIString>
       <UIString ID="MSDCE_TT20">Verknüpfung erstellen</UIString>

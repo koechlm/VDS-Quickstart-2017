@@ -55,7 +55,7 @@ function InitializeWindow
 		}
 		catch [System.Exception]
 		{		
-			[System.Windows.MessageBox]::Show("Your Inventor IPJ settings don't match the Vault environment our are logged into. Ensure that the IPJ file and Inventor Workspace set in the IPJ exist in Vault.","Vault MFG Quickstart")
+			[System.Windows.MessageBox]::Show("Your Inventor IPJ settings don't match the Vault environment you are logged into. Ensure that the IPJ file and Inventor Workspace set in the IPJ exist in Vault.","Vault MFG Quickstart")
 		}		
 
 		#region Quickstart
@@ -676,6 +676,8 @@ function mActivateBreadCrumbCmbs ([System.Collections.ArrayList] $_PathNames)
 			}
 			#$dsDiag.Trace("Index of current name: $_IndexToActivate ")
 			$dsWindow.FindName("cmbBreadCrumb_"+$index).SelectedIndex = $_IndexToActivate
+			$dsWindow.FindName("cmbBreadCrumb_"+$index).IsDropDownOpen = $false #in general we open the pulldown in breadcrumb.ps1
+			#$global:_mBreadCrumbsIndexActivated = $true
 		}
 	} #end try
 	catch [System.Exception]

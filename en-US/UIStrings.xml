@@ -135,6 +135,7 @@
   <!--Inventor custom iProperties Displaynames for dynamic properties-->
   <!--use to change display name for localization or user friendly naming-->
   <!--<UIString ID="aim_description1">Description</UIString>-->
+  <!--Inventor custom iProperties Displaynames for dynamic properties-->
   
   <!--Vault Categories-->
   <UIString ID="CAT1">Engineering</UIString>
@@ -198,6 +199,7 @@
   <!--Quickstart Help And Documentation end-->
 
   <!--Quickstart ShortCut Pane-->
+      <UIString ID="MSDCE_LBL88">Shortcuts</UIString>
       <UIString ID="MSDCE_BTN2">Activate</UIString>
       <UIString ID="MSDCE_BTN3">Delete</UIString>
       <UIString ID="MSDCE_TT20">Create Shortcut</UIString>

@@ -173,7 +173,7 @@
         <GridSplitter Grid.Column="0"
                       BorderBrush="#FFF0F0F0" Width="0" Grid.Row="1" />
         <Border Grid.Column="1"
-        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0" BorderBrush="#FFABADB3" BorderThickness="0,0,0,1">
+        	Grid.Row="1" MaxWidth="750" Margin="5,0,0,0" BorderBrush="#FFABADB3" BorderThickness="0,0,0,1" VerticalAlignment="Top" Background="Black">
             <Grid x:Name="grdRight"
         		Background="#FFF0F0F0">
                 <Grid.RowDefinitions>
@@ -207,9 +207,8 @@
                 <TextBox x:Name="txtStockNumber"
         			Text="{Binding Prop[Stock Number].Value, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"
         			Grid.Row="3" />
-                <Label x:Name="lblFileName" Content="{Binding UIString[LBL6], FallbackValue=File Name}" Grid.Row="4"
-        			BorderThickness="1" />
-                <TextBox x:Name="FILENAME" Grid.Row="4" Grid.Column="1" BorderThickness="0,1,1,1"
+                <Label x:Name="lblFileName" Content="{Binding UIString[LBL6], FallbackValue=File Name}" Grid.Row="4" />
+                <TextBox x:Name="FILENAME" Grid.Row="4" Grid.Column="1"
         			IsEnabled="{Binding SingleElementIsSelected}"
         			Text="{WPF:ValidatedBinding Prop[DocNumber].Value}"
         			Visibility="{Binding NumSchmFieldsEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=DSNumSchmsCtrl}" />
