@@ -1,0 +1,113 @@
+/* Cascading Style Sheet for HTML export */
+/* MODULE: STATIC OUTLINE */
+
+/* Light Blue style */
+
+/* This stylesheet expects the following HTML structure
+		  
+  left column in page body
+		  #pageBody .left
+		  
+		  td.outlineColumn
+		     div.staticOutline
+			     div.maintopic
+				     span.select or splan.unselect
+			     div.subtopic
+				     span.select or splan.unselect
+					  
+*/
+
+
+/* visual highlight the sidebar navigation */
+.outlineColumn {
+	vertical-align: top;	
+	border: 1px solid #808080;					/* STYLE */
+	background-color: #F4F4F4;					/* STYLE */
+	margin: 0px;
+	padding-bottom: 20px; 
+}
+
+.staticOutline {
+	white-space: nowrap; 		
+	vertical-align: top;
+}
+
+.staticOutline a:link {
+	color: Black;								/* STYLE */
+	text-decoration: none;
+}
+
+.staticOutline a:active {
+	color: #FF3300;							/* STYLE */
+	text-decoration: none;
+}
+
+.staticOutline a:visited {
+	color: Black;								/* STYLE */
+	text-decoration: none;
+}
+
+.staticOutline a:hover {
+   color: #FF3300;							/* STYLE */
+	text-decoration: none;
+}
+
+.staticOutline .hometopic a:link {
+	color: Black;								/* STYLE */
+}
+
+.staticOutline .hometopic a:visited {
+	color: Black;								/* STYLE */
+}
+
+.staticOutline .hometopic img {
+	display: none;								/* STYLE */   /* show/hide image */
+}
+
+.staticOutline .hometopic {
+/*	background : #8CAAC7; */				/* STYLE */
+   margin-left:  4px;
+   margin-right:  4px;
+	margin-top:   0.8em;						/* STYLE */
+	margin-bottom: 0.2em;					/* STYLE */
+	font-size: 8pt;
+	font-weight: bold;						/* STYLE */
+	/*border-top: 1px dotted Silver; */ /* STYLE */
+   /*padding-top: 5px;*/					/* STYLE */
+}
+
+.staticOutline .maintopic img {
+	display: none;								/* STYLE */   /* show/hide image */
+}
+
+.staticOutline .maintopic {
+/*	background : #8CAAC7; */				/* STYLE */
+   margin-left:  4px;
+   margin-right:  4px;
+	margin-top:   0.8em;						/* STYLE */
+	margin-bottom: 0.2em;					/* STYLE */
+	font-size: 8pt;
+	font-weight: bold;						/* STYLE */
+	/*border-top: 1px dotted Silver; */ /* STYLE */
+   /*padding-top: 5px;*/					/* STYLE */
+}
+
+.staticOutline .subtopic img {
+	display: none;							/* STYLE */   /* show/hide image */
+}
+
+.staticOutline .subtopic {
+   text-indent: 10px;
+   margin-left:  4px;			/* use same margin as in .maintopic*/			/* STYLE */
+   margin-right:  4px;
+	margin-bottom: 0.2em;					/* STYLE */
+	font-size: 8pt;
+}
+
+.staticOutline .select {
+	background : #BDCFF7;				/* STYLE */
+	color : White;							/* STYLE */
+}
+
+.staticOutline .unselect {
+}
