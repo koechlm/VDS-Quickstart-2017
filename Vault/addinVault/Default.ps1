@@ -454,16 +454,26 @@ function GetNumberPreview
 	}
 }
 
+#Workaround for Property names containing round brackets
+#Xaml fails to parse
 function ItemTitle
 {
-	$val = $Prop["_XLTN_TITLE_ITEM_CO"].Value
-	return $val
+    if ($Prop)
+	{
+       $val = $Prop["_XLTN_TITLE_ITEM_CO"].Value
+	   return $val
+    }
 }
 
+#Workaround for Property names containing round brackets
+#Xaml fails to parse
 function ItemDescription
 {
-	$val = $Prop["_XLTN_DESCRIPTION_ITEM_CO"].Value
-	return $val
+	if($Prop)#Tab gets loaded before the SelectionChanged event gets fired resulting with null Prop. Happens when the vault is started with Change Order as the last view.
+    {
+       $val = $Prop["_XLTN_DESCRIPTION_ITEM_CO"].Value
+	   return $val
+    }
 }
 
 #region Quickstart 
