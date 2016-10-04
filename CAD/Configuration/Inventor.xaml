@@ -42,7 +42,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <DatePicker SelectedDate="{WPF:ValidatedBinding Value, StringFormat=dd/MM/yyyy}" />
+                                <DatePicker SelectedDate="{WPF:ValidatedBinding Value}" />
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>

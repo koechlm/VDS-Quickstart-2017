@@ -27,7 +27,7 @@
                         </Setter.Value>
                     </Setter>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding Type}" Value="DateTime">
+                <DataTrigger Binding="{Binding Typ}" Value="DateTime">
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
