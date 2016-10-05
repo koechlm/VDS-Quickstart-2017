@@ -114,11 +114,11 @@ function InitializeWindow
 						if (($Prop["_FileExt"].Value -eq "idw") -or ($Prop["_FileExt"].Value -eq "dwg" )) 
 						{
 							[System.Reflection.Assembly]::LoadFrom($Env:ProgramData + "\Autodesk\Vault 2017\Extensions\DataStandard" + '\Vault\addinVault\VDSUtils.dll')
-							$_mInvHelpers = New-Object VDSUtils.InvHelpers
-							$global:_ModelPath = $_mInvHelpers.m_GetMainViewModelPath($Application) #NEW 2017 hand over the parent inventor application, to ensure the correct instance
-							$Prop["Title"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Title")
-							$Prop["Description"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Description")
-							$Prop["Part Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Part Number") 
+							$_mInvHelpers = New-Object VDSUtils.InvHelpers #NEW 2017 hand over the parent inventor application, to ensure the correct instance
+							$_ModelFullFileName = $_mInvHelpers.m_GetMainViewModelPath($Application)#NEW 2017 hand over the parent inventor application, to ensure the correct instance
+							$Prop["Title"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Title")
+							$Prop["Description"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Description")
+							$Prop["Part Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Part Number") 
 							
 							# Quickstart sets the category to eliminate the manual step of selection
 							$mCatName = GetCategories | Where {$_.Name -eq $UIString["MSDCE_CAT00"]}
@@ -128,20 +128,35 @@ function InitializeWindow
 								$mCatName = GetCategories | Where {$_.Name -eq $UIString["CAT1"]} #"Engineering"
 								IF ($mCatName) { $Prop["_Category"].Value = $UIString["CAT1"]}
 							}
+							#set the path to the first drawings view's model path if GFN4S is false
+							If ($global:mGFN4Special -eq $false) # The drawing get's saved to it#s first view's model location and name
+							{	
+								$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
+								$_ModelFile = Get-ChildItem $_ModelFullFileName
+								$_ModelPath = $_ModelFile.DirectoryName	
+								$Prop["DocNumber"].Value = $_ModelName
+								#retrieve the matching folder selection of the model's path
+								$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
+								$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+								$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+								$_PathNames = $Prop["Folder"].Value.Split("\")
+								mActivateBreadCrumbCmbs $_PathNames
+							}
 						}
 						#set path & filename for IPN
-						if ($Prop["_FileExt"].Value -eq "ipn") {
+						if ($Prop["_FileExt"].Value -eq "ipn") 
+						{
 							[System.Reflection.Assembly]::LoadFrom($Env:ProgramData + "\Autodesk\Vault 2017\Extensions\DataStandard" + '\Vault\addinVault\VDSUtils.dll')
-							$_mInvHelpers = New-Object VDSUtils.InvHelpers
-							$global:_ModelPath = $_mInvHelpers.m_GetMainViewModelPath($Application) #NEW 2017 hand over the parent inventor application, to ensure the correct instance
+							$_mInvHelpers = New-Object VDSUtils.InvHelpers #NEW 2017 hand over the parent inventor application, to ensure the correct instance
+							$_ModelFullFileName = $_mInvHelpers.m_GetMainViewModelPath($Application)#NEW 2017 hand over the parent inventor application, to ensure the correct instance
 							$Prop["Title"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Title")
-							$Prop["Description"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Description")
-							$Prop["Part Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Part Number")
-							$Prop["Stock Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Stock Number")
+							$Prop["Description"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Description")
+							$Prop["Part Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Part Number")
+							$Prop["Stock Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Stock Number")
 							# for custom properties there is always a risk that any does not exist
 							try {
-								$Prop[$_iPropSemiFinished].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,$_iPropSemiFinished)
-								$_t1 = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath, $_iPropSpearWearPart)
+								$Prop[$_iPropSemiFinished].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,$_iPropSemiFinished)
+								$_t1 = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName, $_iPropSpearWearPart)
 								if ($_t1 -ne "") {
 									$Prop[$_iPropSpearWearPart].Value = $_t1
 								}
@@ -149,9 +164,23 @@ function InitializeWindow
 							catch {
 								#$dsDiag.Trace("Set path, filename and properties for IPN: At least one custom property failed, most likely it did not exist and is not part of the cfg ")
 							}
+							#set the path to the first model's path if GFN4S is false
+							If ($global:mGFN4Special -eq $false) # The drawing get's saved to it#s first view's model location and name
+							{
+								$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
+								$_ModelFile = Get-ChildItem $_ModelFullFileName
+								$_ModelPath = $_ModelFile.DirectoryName	
+								$Prop["DocNumber"].Value = $_ModelName
+								#retrieve the matching folder selection of the model's path
+								$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
+								$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+								$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+								$_PathNames = $Prop["Folder"].Value.Split("\")
+								mActivateBreadCrumbCmbs $_PathNames
+							}
 						}
 
-						if (($global:_ModelPath -eq "") -and ($global:mGFN4Special -eq $false)) 
+						if (($_ModelFullFileName -eq "") -and ($global:mGFN4Special -eq $false)) 
 						{ 
 							[System.Windows.MessageBox]::Show($UIString["MSDCE_MSG00"],"Vault MFG Quickstart")
 							$dsWindow.FindName("btnOK").ToolTip = $UIString["MSDCE_MSG00"]
