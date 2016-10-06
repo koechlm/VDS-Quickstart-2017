@@ -205,16 +205,21 @@
       <UIString ID="MSDCE_TT20">Create Shortcut</UIString>
       <UIString ID="MSDCE_TT23">Rightclick to activate / delete</UIString>
   <!--Quickstart ShortCut Pane end-->
-  
-  <!--Reserve Numbering Snippet-->
-      <UIString ID="MSDCE_MNU20">Reserve Numbers...</UIString>
-      <UIString ID="MSDCE_MSG03">How to use this tool?</UIString>
-      <UIString ID="MSDCE_MSG04">Select Numbering Scheme.</UIString>
-      <UIString ID="MSDCE_MSG05">Set the quantity of numbers required.</UIString>
-      <UIString ID="MSDCE_MSG06">Execute.</UIString>
-      <UIString ID="MSDCE_MSG07">All numbers generated are pushed to windows clipboard automatically. Grab from there with CTRL-V to insert.</UIString>
-  <!--Reserve Numbering Snippet-->
-  
   <!--Quickstart Multilang Strings End-->
+
+  <!--Reserve Numbers Snippet-->
+    <UIString ID="ADSK-RSRVNUMBERS_MNU20">Reserve Numbers...</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_LBL105">Range to Reserve</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_LBL106">Generated Numbers</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG03">How to use this tool?</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG04">Select Numbering Scheme.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG05">Set the quantity of numbers required.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG06">Execute.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG07">All numbers generated are pushed to windows clipboard automatically. Grab from there with CTRL-V to insert.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_TT32">Insert Result at target location using CTRL-V.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_TT33">Generates Numbers and adds these to ClipBoard.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_BTN7">Run</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_BTN8">Close</UIString>
+  <!--Reserve Numbers Snippet-->
   
 </UIStrings>

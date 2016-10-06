@@ -31,7 +31,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <DatePicker Text="{WPF:ValidatedBinding Value}" SelectedDateFormat="Short"/>
+                                <DatePicker Text="{WPF:ValidatedBinding Value, ConverterCulture=de-DE}" SelectedDateFormat="Short"/>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>

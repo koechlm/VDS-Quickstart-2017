@@ -27,11 +27,11 @@
                         </Setter.Value>
                     </Setter>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding Typ}" Value="DateTime">
+                <DataTrigger Binding="{Binding Type}" Value="DateTime">
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate>
-                                <DatePicker Text="{WPF:ValidatedBinding Value}" SelectedDateFormat="Short"/>
+                                <DatePicker Text="{WPF:ValidatedBinding Value, ConverterCulture=de-DE}"/>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>

@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DynamicsProperties>
+  <DynamicPropertiesCategory Category="Engineering">
+    <DynamicProperty>Keywords</DynamicProperty>
+    <DynamicProperty>Comments</DynamicProperty>
+    <DynamicProperty>Author</DynamicProperty>
+    <DynamicProperty>Title</DynamicProperty>
+    <DynamicProperty>Subject</DynamicProperty>
+  </DynamicPropertiesCategory>
   <DynamicPropertiesCategory Category="Drawing AutoCAD">
-    <DynamicProperty>Drawing Title</DynamicProperty>
-    <DynamicProperty>Description</DynamicProperty>
-    <DynamicProperty>Part Number</DynamicProperty>
-    <DynamicProperty Hidden="True">DocNumber</DynamicProperty>
-    <DynamicProperty>Material</DynamicProperty>
-    <DynamicProperty>Dimensions</DynamicProperty>
-    <DynamicProperty>Weight</DynamicProperty>
+    <DynamicProperty>Source File</DynamicProperty>
+    <DynamicProperty>DocNumber</DynamicProperty>
     <DynamicProperty>Format</DynamicProperty>
     <DynamicProperty>Scale</DynamicProperty>
     <DynamicProperty>Sheet</DynamicProperty>
-    <DynamicProperty>Source File</DynamicProperty>
+    <DynamicProperty>Dimensions</DynamicProperty>
+    <DynamicProperty>Description</DynamicProperty>
+    <DynamicProperty>Drawing Title</DynamicProperty>
+    <DynamicProperty>Material</DynamicProperty>
+    <DynamicProperty>Weight</DynamicProperty>
+    <DynamicProperty>Part Number</DynamicProperty>
   </DynamicPropertiesCategory>
 </DynamicsProperties>

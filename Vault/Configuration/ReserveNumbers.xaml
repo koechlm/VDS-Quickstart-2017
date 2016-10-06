@@ -89,7 +89,7 @@
         <Style TargetType="{x:Type WPF:MainWindow}">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CreateMode}" Value="True">
-                    <Setter Property="Title" Value="{Binding UIString[MSDCE_MNU20], FallbackValue='Reserve Numbers'}" />
+                    <Setter Property="Title" Value="{Binding UIString[ADSK-RSRVNUMBERS_MNU20], FallbackValue='Reserve Numbers'}" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -112,11 +112,11 @@
         <Label Content="{Binding UIString[LBL10], FallbackValue=Numbering Scheme}" Grid.Row="0" FontWeight="Bold" />
         <ComboBox x:Name="NumSchms" ItemsSource="{Binding PsList[GetNumSchms], Mode=OneTime}" DisplayMemberPath="Name" Grid.Column="1" SelectedIndex="0"/>
         <WPF:DSNumSchemeCtrl x:Name="DSNumSchmsCtrl" IsEnabled="{Binding IsEnabled, ElementName=NumSchms}" Scheme="{Binding SelectedItem, ElementName=NumSchms}"  GeneratedNumberProperty="_GeneratedNumber" Grid.Row="1" Grid.Column="1" Height="Auto" MinHeight="26"/>
-        <Label Content="{Binding UIString[MSDCE_LBL105], FallbackValue='Range To Reserve'}" Grid.Column="0" Grid.Row="2" Style="{StaticResource lblRequired}" />
+        <Label Content="{Binding UIString[ADSK-RSRVNUMBERS_LBL105], FallbackValue='Range To Reserve'}" Grid.Column="0" Grid.Row="2" Style="{StaticResource lblRequired}" />
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="TotalNum" Style="{StaticResource Required}" Margin="0,2,244,3" Width="60" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
 
-        <Label Content="{Binding UIString[MSDCE_LBL106],FallbackValue='Generated Numbers'}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" Grid.Row="3" x:Name="Range" VerticalScrollBarVisibility="Auto" MinHeight="150" MaxHeight="150" IsEnabled="True" IsReadOnly="True" ToolTip="{Binding UIString[MSDCE_TT32], FallbackValue='CTRL-V to insert @ target'}" >
+        <Label Content="{Binding UIString[ADSK-RSRVNUMBERS_LBL106],FallbackValue='Generated Numbers'}" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" Grid.Row="3" x:Name="Range" VerticalScrollBarVisibility="Auto" MinHeight="150" MaxHeight="150" IsEnabled="True" IsReadOnly="True" ToolTip="{Binding UIString[ADSK-RSRVNUMBERS_TT32], FallbackValue='CTRL-V to insert @ target'}" >
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                     <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -128,19 +128,19 @@
         <RichTextBox Grid.Column="2" Margin="10,0,0,0" Grid.RowSpan="6" Width="170">
             <FlowDocument>
                 <Paragraph>
-                    <Run FontWeight="Bold" Text="{Binding UIString[MSDCE_MSG03], FallbackValue=Instructions...}"/>
+                    <Run FontWeight="Bold" Text="{Binding UIString[ADSK-RSRVNUMBERS_MSG03], FallbackValue=Instructions...}"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="{Binding UIString[MSDCE_MSG04], FallbackValue=Step 1}"/>
+                    <Run Text="{Binding UIString[ADSK-RSRVNUMBERS_MSG04], FallbackValue=Step 1}"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="{Binding UIString[MSDCE_MSG05], FallbackValue=Step 2}"/>
+                    <Run Text="{Binding UIString[ADSK-RSRVNUMBERS_MSG05], FallbackValue=Step 2}"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="{Binding UIString[MSDCE_MSG06], FallbackValue=Step 3}"/>
+                    <Run Text="{Binding UIString[ADSK-RSRVNUMBERS_MSG06], FallbackValue=Step 3}"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="{Binding UIString[MSDCE_MSG07], FallbackValue=Result}"/>
+                    <Run Text="{Binding UIString[ADSK-RSRVNUMBERS_MSG07], FallbackValue=Result}"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
@@ -152,8 +152,8 @@
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="80" />
             </Grid.ColumnDefinitions>
-            <Button x:Name="Generate" Content="{Binding UIString[MSDCE_BTN7], FallbackValue=Generate}" Command="{Binding PsCmd[Reserve]}" Grid.Column="1" HorizontalAlignment="Right" Width="80" IsEnabled="True" ToolTip="{Binding UIString[MSDCE_TT33], FallbackValue='Generates Numbers and adds these to ClipBoard'}" />
-            <Button Content="{Binding UIString[MSDCE_BTN8], FallbackValue=Close}" Grid.Column="3" HorizontalAlignment="Right"  Width="80" Command="{Binding CancelWindowCommand, ElementName=ReserveNumberWindow}" />
+            <Button x:Name="Generate" Content="{Binding UIString[ADSK-RSRVNUMBERS_BTN7], FallbackValue=Generate}" Command="{Binding PsCmd[Reserve]}" Grid.Column="1" HorizontalAlignment="Right" Width="80" IsEnabled="True" ToolTip="{Binding UIString[ADSK-RSRVNUMBERS_TT33], FallbackValue='Generates Numbers and adds these to ClipBoard'}" />
+            <Button Content="{Binding UIString[ADSK-RSRVNUMBERS_BTN8], FallbackValue=Close}" Grid.Column="3" HorizontalAlignment="Right"  Width="80" Command="{Binding CancelWindowCommand, ElementName=ReserveNumberWindow}" />
 
         </Grid>
     </Grid>
