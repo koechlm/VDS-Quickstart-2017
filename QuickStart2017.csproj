@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7738939-F1C1-417B-A33D-65176C463F76}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuickStart2017_EN</RootNamespace>
+    <AssemblyName>QuickStart2017-EN</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autodesk.Connectivity.WebServices">
+      <HintPath>C:\Program Files\Autodesk\Vault Professional 2017\Explorer\Autodesk.Connectivity.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Common">
+      <HintPath>C:\ProgramData\Autodesk\Vault 2017\Extensions\DataStandard\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CreateObject">
+      <HintPath>C:\ProgramData\Autodesk\Vault 2017\Extensions\DataStandard\CreateObject.dll</HintPath>
+    </Reference>
+    <Reference Include="dataStandard.UI">
+      <HintPath>C:\ProgramData\Autodesk\Inventor 2017\Addins\Data Standard\dataStandard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CAD\addins\breadCrumb.ps1" />
+    <None Include="CAD\addins\Default.ps1" />
+    <None Include="CAD\Configuration\AutoCAD-Mechanical.zip" />
+    <None Include="CAD\Configuration\AutoCAD.cfg" />
+    <None Include="CAD\Configuration\Inventor.cfg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Vault\addinVault\AssociatedFiles.ps1" />
+    <None Include="Vault\addinVault\Default.ps1" />
+    <None Include="Vault\addinVault\FileBOM.ps1" />
+    <None Include="Vault\addinVault\Menus\CreateCustomObject.ps1" />
+    <None Include="Vault\addinVault\Menus\CreateFile.ps1" />
+    <None Include="Vault\addinVault\Menus\CreateFolder.ps1" />
+    <None Include="Vault\addinVault\Menus\EditCustomObject.ps1" />
+    <None Include="Vault\addinVault\Menus\EditFile.ps1" />
+    <None Include="Vault\addinVault\Menus\EditFolder.ps1" />
+    <None Include="Vault\addinVault\Menus\ReserveNumbers.ps1" />
+    <None Include="Vault\addinVault\Menus\sample1.ps1" />
+    <None Include="Vault\addinVault\Menus\Select Folder.ps1" />
+    <None Include="Vault\addinVault\Menus\ShowAboutDialog.ps1" />
+    <None Include="Vault\addinVault\Menus\showCustomHelp.ps1" />
+    <None Include="Vault\addinVault\Menus\ShowLog.ps1" />
+    <None Include="Vault\addinVault\ReserveFileNumber.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CAD\Configuration\AutoCAD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\CableAndHarness.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\DesignAccelerator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\FrameGenerator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\Inventor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\SaveCopyAs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CAD\Configuration\TubeAndPipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\CustomObject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Eco\Datasheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\File.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\FileOffice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\File\CAD BOM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\File\Datasheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Folder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Folder\Datasheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Item\Associated Files.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Item\Datasheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\ReserveNumbers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vault\Configuration\Task\Datasheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CAD\Configuration\AutoCadDynamicProperties.xml" />
+    <Resource Include="CAD\Configuration\InventorDynamicProperties.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="de-DE\PropertyTranslations.xml" />
+    <Resource Include="de-DE\UIStrings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="en-US\PropertyTranslations.xml" />
+    <Resource Include="en-US\UIStrings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vault\About.ico" />
+    <Content Include="Vault\addinVault\VDSUtils.dll" />
+    <Resource Include="Vault\Claim-add.ico" />
+    <Resource Include="Vault\Claim-edit.ico" />
+    <Resource Include="Vault\Claim-info.ico" />
+    <Resource Include="Vault\Claim-settings.ico" />
+    <Resource Include="Vault\Configuration\File.xml" />
+    <Resource Include="Vault\Configuration\FileOffice.xml" />
+    <Resource Include="Vault\Configuration\Item\Icons\attachment.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\dwg.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\iam.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\idw.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\ipn.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\ipt.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\linkedfile.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\Primary.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\PrimarySub.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\Secondary.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\SecondarySub.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\StandardComponent.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\unknown.png" />
+    <Resource Include="Vault\Configuration\VaultDynamicProperties.xml" />
+    <Resource Include="Vault\CustomHelpDoc.ico" />
+    <Resource Include="Vault\doc-box-add.ico" />
+    <Resource Include="Vault\doc-box-edit.ico" />
+    <Resource Include="Vault\doc-box-info.ico" />
+    <Resource Include="Vault\doc-box.ico" />
+    <Resource Include="Vault\DSLanguages.xml" />
+    <Resource Include="Vault\ECR-add.ico" />
+    <Resource Include="Vault\ECR-edit.ico" />
+    <Resource Include="Vault\ECR-info.ico" />
+    <Resource Include="Vault\ECR.ico" />
+    <Resource Include="Vault\EditCO.ico" />
+    <Resource Include="Vault\EditCustomObject.ico" />
+    <Resource Include="Vault\EditFileDatasheet.ico" />
+    <Resource Include="Vault\EditFolderDatasheet.ico" />
+    <Resource Include="Vault\factory-add.ico" />
+    <Resource Include="Vault\factory-edit.ico" />
+    <Resource Include="Vault\factory-info.ico" />
+    <Resource Include="Vault\factory.ico" />
+    <Resource Include="Vault\Folder2017.xml" />
+    <Resource Include="Vault\Lock.ico" />
+    <Resource Include="Vault\Log.ico" />
+    <Resource Include="Vault\MenuDefinitions.xml" />
+    <Resource Include="Vault\Milestone-add.ico" />
+    <Resource Include="Vault\Milestone-edit.ico" />
+    <Resource Include="Vault\Milestone-info.ico" />
+    <Resource Include="Vault\Milestone-ok.ico" />
+    <Resource Include="Vault\NewCO.ico" />
+    <Resource Include="Vault\NewStandardFile.ico" />
+    <Resource Include="Vault\NewStandardFolder.ico" />
+    <Resource Include="Vault\QR-add.ico" />
+    <Resource Include="Vault\QR-edit.ico" />
+    <Resource Include="Vault\QR-info.ico" />
+    <Resource Include="Vault\QR.ico" />
+    <Resource Include="Vault\ReservedNumExport.ico" />
+    <Resource Include="Vault\ReserveNumbers.ico" />
+    <Resource Include="Vault\Service-add.ico" />
+    <Resource Include="Vault\Service-edit.ico" />
+    <Resource Include="Vault\Service-info.ico" />
+    <Resource Include="Vault\Service.ico" />
+    <Resource Include="Vault\task-add.ico" />
+    <Resource Include="Vault\task-edit.ico" />
+    <Resource Include="Vault\task-info.ico" />
+    <Resource Include="Vault\task.ico" />
+    <Resource Include="Vault\Term-add.ico" />
+    <Resource Include="Vault\Term-edit.ico" />
+    <Resource Include="Vault\Term-info.ico" />
+    <Resource Include="Vault\Term-ok.ico" />
+    <Resource Include="Vault\TimOff-add.ico" />
+    <Resource Include="Vault\TimOff-edit.ico" />
+    <Resource Include="Vault\TimOff-info.ico" />
+    <Resource Include="Vault\TimOff.ico" />
+    <Resource Include="Vault\Transmittal-add.ico" />
+    <Resource Include="Vault\Transmittal-edit.ico" />
+    <Resource Include="Vault\Transmittal-info.ico" />
+    <Resource Include="Vault\Transmittal.ico" />
+    <Resource Include="Vault\user-w-add.ico" />
+    <Resource Include="Vault\user-w-edit.ico" />
+    <Resource Include="Vault\user-w-info.ico" />
+    <Resource Include="Vault\user-w.ico" />
+    <Resource Include="Vault\vault.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

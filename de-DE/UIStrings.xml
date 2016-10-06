@@ -208,15 +208,21 @@
       <UIString ID="MSDCE_TT23">Aktivieren / Löschen mit Rechtsklick</UIString>
     <!--Quickstart ShortCut Pane end-->
 
-    <!--Reserve Numbering Snippet Start-->
-      <UIString ID="MSDCE_MNU20">Nummern reservieren...</UIString>
-      <UIString ID="MSDCE_MSG03">Wie wird das Werkzeug verwendet?</UIString>
-      <UIString ID="MSDCE_MSG04">Wählen Sie ein Nummernschema.</UIString>
-      <UIString ID="MSDCE_MSG05">Geben Sie die Anzahl der erforderlichen Nummern an.</UIString>
-      <UIString ID="MSDCE_MSG06">Starten sie mit Ausführen.</UIString>
-      <UIString ID="MSDCE_MSG07">Alle erzeugten Nummern stehen unmittelbar in der Windows Zwischenablage zur Verfügung.</UIString>
-    <!--Reserve Numbering Snippet end-->
-  
   <!--Quickstart Multilang Strings End-->
-  
+
+  <!--Reserve Numbers Snippet Start-->
+    <UIString ID="ADSK-RSRVNUMBERS_MNU20">Nummern reservieren...</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_LBL105">Anzahl Nummern</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_LBL106">Erzeugte Nummern</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG03">Wie wird das Werkzeug verwendet?</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG04">Wählen Sie ein Nummernschema.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG05">Geben Sie die Anzahl der erforderlichen Nummern an.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG06">Starten sie mit Ausführen.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_MSG07">Alle erzeugten Nummern stehen unmittelbar in der Windows Zwischenablage zur Verfügung.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_TT32">Fügen Sie das Ergebnis mit Strg-V am Zielort ein.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_TT33">Erzeugt Nummern und kopiert diese in die Zwischenablage.</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_BTN7">Ausführen</UIString>
+    <UIString ID="ADSK-RSRVNUMBERS_BTN8">Beenden</UIString>
+  <!--Reserve Numbers Snippet end-->
+
 </UIStrings>
