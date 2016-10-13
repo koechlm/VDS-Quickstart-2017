@@ -60,7 +60,8 @@ function InitializeWindow
 
 		#region Quickstart
 			$_PathNames = mReadLastUsedFolder
-			mActivateBreadCrumbCmbs $_PathNames	
+			mActivateBreadCrumbCmbs $_PathNames
+			$Prop["Part Number"].Value = "" #reset the part number for new files as Inventor writes the file name (no extension) as a default.
 		#endregion
     }
 
