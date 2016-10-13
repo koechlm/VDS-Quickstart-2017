@@ -60,7 +60,7 @@ function InitializeWindow
 
 		#region Quickstart
 			$_PathNames = mReadLastUsedFolder
-			mActivateBreadCrumbCmbs $_PathNames	
+			mActivateBreadCrumbCmbs $_PathNames
 		#endregion
     }
 
@@ -71,6 +71,7 @@ function InitializeWindow
 		"InventorWindow"
 		{
 			#region Quickstart
+			$Prop["Part Number"].Value = "" #reset the part number for new files as Inventor writes the file name (no extension) as a default.	
 
 			#	initialize the context for Drawings or presentation files as these have Vault Option settings
 			$global:mGFN4Special = mReadGFN4S # GFN4S = Option "Generate File Numbers for Drawings & Presentations", IDW/DWG & IPN
