@@ -276,6 +276,9 @@ function GetNewFileName
 		$dsDiag.Trace("-> GenerateNumber")
 		$fileName = $Prop["_GeneratedNumber"].Value
 		$dsDiag.Trace("fileName = $fileName")
+		#Quickstart
+			If($Prop["_XLTN_PARTNUMBER"]) { $Prop["_XLTN_PARTNUMBER"].Value = $Prop["_GeneratedNumber"].Value }
+		#Quickstart
 	}
 	$newfileName = $fileName + $Prop["_FileExt"].Value
 	$dsDiag.Trace("<< GetNewFileName $newfileName")
