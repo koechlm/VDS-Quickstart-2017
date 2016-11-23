@@ -260,6 +260,7 @@ function GetNewCustomObjectName
 				return $customObjectName
 			}
 		}
+	#endregion Quickstart
 }
 
 #Constructs the filename(numschems based or handtyped)and returns it.
