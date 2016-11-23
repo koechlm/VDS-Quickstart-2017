@@ -71,8 +71,6 @@ function InitializeWindow
 		"InventorWindow"
 		{
 			#region Quickstart
-			$Prop["Part Number"].Value = "" #reset the part number for new files as Inventor writes the file name (no extension) as a default.
-
 			#	initialize the context for Drawings or presentation files as these have Vault Option settings
 			$global:mGFN4Special = mReadGFN4S # GFN4S = Option "Generate File Numbers for Drawings & Presentations", IDW/DWG & IPN
 			if ($global:mGFN4Special -eq $true)
@@ -96,6 +94,7 @@ function InitializeWindow
 			{
 				$true 
 				{
+					$Prop["Part Number"].Value = "" #reset the part number for new files as Inventor writes the file name (no extension) as a default.
 					#$dsDiag.Trace(">> CreateMode Section executes...")
 					# set the category: Quickstart = "3D components" for model files and "Inventor Drawing" for IDW/DWG
 
