@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DynamicsProperties>
   <DynamicPropertiesCategory Category="Drawing AutoCAD">
-    <DynamicProperty>Drawing Title</DynamicProperty>
+    <DynamicProperty>Title</DynamicProperty>
+    <DynamicProperty Hidden="True">Drawing Title</DynamicProperty>
     <DynamicProperty>Description</DynamicProperty>
     <DynamicProperty>Part Number</DynamicProperty>
     <DynamicProperty Hidden="True">DocNumber</DynamicProperty>

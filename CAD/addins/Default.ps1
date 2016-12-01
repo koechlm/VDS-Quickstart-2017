@@ -149,7 +149,7 @@ function InitializeWindow
 							[System.Reflection.Assembly]::LoadFrom($Env:ProgramData + "\Autodesk\Vault 2017\Extensions\DataStandard" + '\Vault\addinVault\VDSUtils.dll')
 							$_mInvHelpers = New-Object VDSUtils.InvHelpers #NEW 2017 hand over the parent inventor application, to ensure the correct instance
 							$_ModelFullFileName = $_mInvHelpers.m_GetMainViewModelPath($Application)#NEW 2017 hand over the parent inventor application, to ensure the correct instance
-							$Prop["Title"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $global:_ModelPath,"Title")
+							$Prop["Title"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Title")
 							$Prop["Description"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Description")
 							$Prop["Part Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Part Number")
 							$Prop["Stock Number"].Value = $_mInvHelpers.m_GetMainViewModelPropValue($Application, $_ModelFullFileName,"Stock Number")

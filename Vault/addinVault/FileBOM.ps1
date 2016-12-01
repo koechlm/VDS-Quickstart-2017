@@ -23,10 +23,23 @@ function GetFileBOM($fileID)
 	$dsDiag.Trace(">> Starting GetFileBOM($fileID)")
 	$bom = $vault.DocumentService.GetBOMByFileId($fileID)
 	$cldIds =@()
+	$_ExternalIds = @()
 	$bom.InstArray | Where-Object { $_.ParId -eq 0 } | ForEach-Object { 
 		$CldId = $_.CldId
 		$comp = $bom.CompArray | Where-Object { $_.Id -eq $CldId }
-		$cldIds += $comp.XRefId
+		#region workaround to eliminate virtual components
+		If ($comp.CompTyp -ne "Virtual"){
+			$cldIds += $comp.XRefId
+			$Global:_mContainsVirtual = $false
+			$_ExternalIds += $comp.Id
+			$dsWindow.FindName("txtBlck_Notification").Visibility = "Collapsed"
+		}
+		Else { 
+			$Global:_mContainsVirtual = $true 
+			$dsWindow.FindName("txtBlck_Notification").Visibility = "Visible"
+			$dsWindow.FindName("txtBlck_Notification").Text = $UIString["MSDCE_CAD-BOM01"]
+		}
+		#endregion
 	}
 	$dsDiag.Trace("   cldIds: "+$cldIds.Count)
 	$bomItems = @()
@@ -35,8 +48,14 @@ function GetFileBOM($fileID)
 		$CldBoms = $vault.DocumentService.GetBOMByFileIds($cldIds)
 		$schm = $bom.SchmArray | Where-Object { $_.SchmTyp -eq "Structured" }
 		$cldBomCounter = 0
+	#region workaround to eliminate virtual components
+		$_BomInstArray = $bom.InstArray | Where-Object { ($_.ParId -eq 0)}
 
-		$bom.InstArray | Where-Object { $_.ParId -eq 0 } | ForEach-Object {
+		$_BomInstArray = $_BomInstArray | Where-Object { ( $_ExternalIds -contains $_.Id)}
+
+		$_BomInstArray | ForEach-Object {
+		#$bom.InstArray | Where-Object { ($_.ParId -eq 0)} | ForEach-Object {
+	#endregion
 			$bomItem = New-Object myBom
 			$CldId = $_.CldId
 			$bomItem.Quantity = $_.Quant
@@ -65,6 +84,11 @@ function GetFileBOM($fileID)
 			$prop = $cldBom.CompAttrArray | Where-Object { $_.PropId -eq $m_Prop.Id}
 			$bomItem.Material = $prop.Val
 		}
+	}
+	Else #the file does not contain BOM information - notify the user
+	{
+		$dsWindow.FindName("txtBlck_Notification").Visibility = "Visible"
+		$dsWindow.FindName("txtBlck_Notification").Text = $UIString["MSDCE_CAD-BOM02"]
 	}
 	$dsDiag.Trace("<< Ending GetFileBOM with $($bomItems.Count) items found")
 	return $bomItems
