@@ -27,9 +27,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBlock x:Name="txtBlck_Notification" Height="23" Text="{Binding UIString[], FallbackValue='Notification/Information available'}" VerticalAlignment="Top" Background="#FFFDF4BF" Grid.ColumnSpan="4" TextOptions.TextHintingMode="Animated"/>
         <DataGrid x:Name="bomList" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="Auto" HorizontalGridLinesBrush="WhiteSmoke" VerticalGridLinesBrush="WhiteSmoke" Grid.Row="1" Grid.ColumnSpan="4">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="Auto" Header="{Binding DataContext.UIString[LBL58], FallbackValue=Preview}">

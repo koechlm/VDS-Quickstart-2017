@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DynamicsProperties>
   <DynamicPropertiesCategory Category="3D component">
-    <DynamicProperty>Ident Number</DynamicProperty>
+    <DynamicProperty Hidden="True">Ident Number</DynamicProperty>
     <DynamicProperty>Title</DynamicProperty>
     <DynamicProperty>Description</DynamicProperty>
     <DynamicProperty>Part Number</DynamicProperty>
@@ -37,10 +37,10 @@
     <DynamicProperty>Keywords</DynamicProperty>
   </DynamicPropertiesCategory>
   <DynamicPropertiesCategory Category="Drawing Inventor">
-    <DynamicProperty>Ident Number</DynamicProperty>
-    <DynamicProperty Hidden="True">Title</DynamicProperty>
-    <DynamicProperty Hidden="True">Description</DynamicProperty>
-    <DynamicProperty Hidden="True">Part Number</DynamicProperty>
+    <DynamicProperty Hidden="True">Ident Number</DynamicProperty>
+    <DynamicProperty>Title</DynamicProperty>
+    <DynamicProperty>Description</DynamicProperty>
+    <DynamicProperty>Part Number</DynamicProperty>
     <DynamicProperty>Project Number</DynamicProperty>
     <DynamicProperty>Material</DynamicProperty>
     <DynamicProperty>Weight</DynamicProperty>
@@ -51,10 +51,10 @@
     <DynamicProperty>Source File</DynamicProperty>
   </DynamicPropertiesCategory>
   <DynamicPropertiesCategory Category="3D Komponenten">
-    <DynamicProperty>Title</DynamicProperty>
+    <DynamicProperty>Titel</DynamicProperty>
     <DynamicProperty>Titel EN</DynamicProperty>
-    <DynamicProperty>Description</DynamicProperty>
-    <DynamicProperty>Part Number</DynamicProperty>
+    <DynamicProperty>Beschreibung</DynamicProperty>
+    <DynamicProperty>Teilenummer</DynamicProperty>
     <DynamicProperty>Material</DynamicProperty>
     <DynamicProperty>Abmessung/Halbzeug</DynamicProperty>
     <DynamicProperty>Halbzeug</DynamicProperty>
@@ -66,7 +66,7 @@
     <DynamicProperty>Breite</DynamicProperty>
     <DynamicProperty>Länge</DynamicProperty>
     <DynamicProperty>Name des Bauteiltyps</DynamicProperty>
-    <DynamicProperty>Identnummer</DynamicProperty>
+    <DynamicProperty Hidden="True">Identnummer</DynamicProperty>
     <DynamicProperty>Entstanden aus</DynamicProperty>
     <DynamicProperty Hidden="True">G_L</DynamicProperty>
   </DynamicPropertiesCategory>
