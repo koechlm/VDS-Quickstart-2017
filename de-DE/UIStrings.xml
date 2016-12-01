@@ -164,8 +164,13 @@
       <UIString ID="MSDCE_CAT11"></UIString>-->
     <!--Quickstart Category Names-->
 
+    <!--Quickstart CAD-BOM-->
+      <UIString ID="MSDCE_CAD-BOM01">Achtung - Baugruppe enthält virtuelle Komponenten! Diese werden in CAD-BOM Sichten gefiltert. Zur Auswertung virtueller Komponenten sollten sie Artikel Stückliste zuweisen.</UIString>
+      <UIString ID="MSDCE_CAD-BOM02">Achtung - Gewählte Komponente enthält keine CAD-BOM Daten.</UIString>
+    <!--Quickstart CAD-BOM end-->
+  
     <!--Quickstart Inventor Dialog-->
-      <UIString ID="MSDCE_MSG00">Modellansicht fehlt! Sie verwenden die Vault Option, dass Zeichnungen identisch zum Modell benannt und abgelegt werden. Speichern sie die Zeichnung manuell im folgenden Dialog; übergehen sie diesen, wenn sie doch ein Modell einfügen möchten.</UIString>
+      <UIString ID="MSDCE_MSG00">Modellansicht fehlt! Sie verwenden die Vault Option, dass IPN/IDW/DWG identisch zum Modell benannt und abgelegt werden. Fügen sie entweder ein Model hinzu, oder ändern sie die Vault Option "Dateinummern für IPN/IDW/DWG generieren".</UIString>
     <!--Quickstart Inventor Dialog end-->
   
     <!--Quickstart Custom Object Names-->

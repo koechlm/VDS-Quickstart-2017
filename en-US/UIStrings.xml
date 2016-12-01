@@ -162,8 +162,13 @@
       <UIString ID="MSDCE_CAT11"></UIString>-->
     <!--Quickstart Category Names-->
 
+    <!--Quickstart CAD-BOM-->
+      <UIString ID="MSDCE_CAD-BOM01">Note - Assembly contains virtual components! These are filtered in CAD-BOM views. Create Item BOM to leverage virtual components' meta data.</UIString>
+      <UIString ID="MSDCE_CAD-BOM02">Note - Selected component has no CAD-BOM data available.</UIString>
+    <!--Quickstart CAD-BOM end-->
+  
     <!--Quickstart Inventor Dialog-->
-      <UIString ID="MSDCE_MSG00">Missing Model View! Your system is set to save drawings depending on model's name and location. Save your drawing manually in the next step; skip it to add a model view first.</UIString>
+      <UIString ID="MSDCE_MSG00">Missing Model View! Your system is set to save IPN/IDW/DWG depending on model's name and location. Either add a model or change the Vault option to generate numbers for IPN/IDW/DWG.</UIString>
     <!--Quickstart Inventor Dialog end-->
   
     <!--Quickstart Custom Object Names-->

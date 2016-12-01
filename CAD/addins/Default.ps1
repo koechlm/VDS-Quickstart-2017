@@ -60,7 +60,7 @@ function InitializeWindow
 
 		#region Quickstart
 			$_PathNames = mReadLastUsedFolder
-			mActivateBreadCrumbCmbs $_PathNames
+			mActivateBreadCrumbCmbs $_PathNames	
 		#endregion
     }
 
@@ -70,6 +70,7 @@ function InitializeWindow
 	{
 		"InventorWindow"
 		{
+			#region Quickstart
 			#	initialize the context for Drawings or presentation files as these have Vault Option settings
 			$global:mGFN4Special = mReadGFN4S # GFN4S = Option "Generate File Numbers for Drawings & Presentations", IDW/DWG & IPN
 			if ($global:mGFN4Special -eq $true)
@@ -93,7 +94,6 @@ function InitializeWindow
 			{
 				$true 
 				{
-					#region Quickstart
 					$Prop["Part Number"].Value = "" #reset the part number for new files as Inventor writes the file name (no extension) as a default.
 					#$dsDiag.Trace(">> CreateMode Section executes...")
 					# set the category: Quickstart = "3D components" for model files and "Inventor Drawing" for IDW/DWG
@@ -131,16 +131,18 @@ function InitializeWindow
 							#set the path to the first drawings view's model path if GFN4S is false
 							If ($global:mGFN4Special -eq $false) # The drawing get's saved to it#s first view's model location and name
 							{	
-								$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
-								$_ModelFile = Get-ChildItem $_ModelFullFileName
-								$_ModelPath = $_ModelFile.DirectoryName	
-								$Prop["DocNumber"].Value = $_ModelName
-								#retrieve the matching folder selection of the model's path
-								$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
-								$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
-								$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
-								$_PathNames = $Prop["Folder"].Value.Split("\")
-								mActivateBreadCrumbCmbs $_PathNames
+								If ($_ModelFullFileName) { 
+									$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
+									$_ModelFile = Get-ChildItem $_ModelFullFileName
+									$_ModelPath = $_ModelFile.DirectoryName	
+									$Prop["DocNumber"].Value = $_ModelName
+									#retrieve the matching folder selection of the model's path
+									$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
+									$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+									$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+									$_PathNames = $Prop["Folder"].Value.Split("\")
+									mActivateBreadCrumbCmbs $_PathNames
+								}
 							}
 						}
 						#set path & filename for IPN
@@ -167,24 +169,30 @@ function InitializeWindow
 							#set the path to the first model's path if GFN4S is false
 							If ($global:mGFN4Special -eq $false) # The drawing get's saved to it#s first view's model location and name
 							{
-								$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
-								$_ModelFile = Get-ChildItem $_ModelFullFileName
-								$_ModelPath = $_ModelFile.DirectoryName	
-								$Prop["DocNumber"].Value = $_ModelName
-								#retrieve the matching folder selection of the model's path
-								$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
-								$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
-								$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
-								$_PathNames = $Prop["Folder"].Value.Split("\")
-								mActivateBreadCrumbCmbs $_PathNames
+								If ($_ModelFullFileName) { 
+									$_ModelName = [System.IO.Path]::GetFileNameWithoutExtension($_ModelFullFileName)
+									$_ModelFile = Get-ChildItem $_ModelFullFileName
+									$_ModelPath = $_ModelFile.DirectoryName	
+									$Prop["DocNumber"].Value = $_ModelName
+									#retrieve the matching folder selection of the model's path
+									$_1 = $_ModelPath.IndexOf($Prop["_WorkSpacePath"].Value)
+									$_3 = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+									$Prop["Folder"].Value = $_ModelPath.SubString($_1).Replace($Prop["_WorkSpacePath"].Value + "\", "")
+									$_PathNames = $Prop["Folder"].Value.Split("\")
+									mActivateBreadCrumbCmbs $_PathNames
+								}
 							}
 						}
 
 						if (($_ModelFullFileName -eq "") -and ($global:mGFN4Special -eq $false)) 
 						{ 
 							[System.Windows.MessageBox]::Show($UIString["MSDCE_MSG00"],"Vault MFG Quickstart")
-							$dsWindow.FindName("btnOK").ToolTip = $UIString["MSDCE_MSG00"]
-							$dsWindow.FindName("btnOK").IsEnabled = $false
+							$dsWindow.add_Loaded({
+										#[System.Windows.MessageBox]::Show("Will skip VDS Dialog for Drawings without model view; 
+										#	enable Option - Generate File Numbers for Drawings or add model view.","Vault MFG Quickstart")
+										$dsWindow.CancelWindowCommand.Execute($this)})
+							#$dsWindow.FindName("btnOK").ToolTip = $UIString["MSDCE_MSG00"]
+							#$dsWindow.FindName("btnOK").IsEnabled = $false
 						}
 					} # end of copy mode = false check
 
