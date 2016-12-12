@@ -184,7 +184,7 @@
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </Window.Resources>
     <WPF:MainWindow.InputBindings>
-        <KeyBinding Key="F1" Command="{Binding PsCmd[mHelp(500)]}"/>
+        <KeyBinding Key="F1" Command="{Binding PsCmd[mHelp(550)]}"/>
     </WPF:MainWindow.InputBindings>
     <Grid x:Name="grdMain" Margin="5">
         <Grid.RowDefinitions>
@@ -350,7 +350,7 @@
                     Command="{Binding CancelWindowCommand, ElementName=FileWindow}" Grid.Column="4" Width="80"
                     HorizontalAlignment="Right" Height="24" IsCancel="True" />
             <Button x:Name="btnHelp" Content="{Binding UIString[MSDCE_BTN1], FallbackValue=Help}" 
-                    Command="{Binding PsCmd[mHelp(500)]}" Height="24" ToolTip="F1" Margin="0" Width="80" />
+                    Command="{Binding PsCmd[mHelp(550)]}" Height="24" ToolTip="F1" Margin="0" Width="80" />
         </Grid>
     </Grid>
 </WPF:MainWindow>

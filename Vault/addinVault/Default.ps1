@@ -557,6 +557,9 @@ function mHelp ([Int] $mHContext) {
 			500 {
 				$mHPage = "File.html";
 			}
+			550 {
+				$mHPage = "OfficeFile.html";
+			}
 			600 {
 				$mHPage = "Folder.html";
 			}
