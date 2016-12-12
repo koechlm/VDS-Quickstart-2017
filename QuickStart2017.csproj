@@ -198,6 +198,11 @@
     <Resource Include="en-US\UIStrings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Vault\Configuration\Item\Icons\docx.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\mdb.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\pdf.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\pptx.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\xlsx.png" />
     <Resource Include="Vault\About.ico" />
     <Content Include="Vault\addinVault\VDSUtils.dll" />
     <Resource Include="Vault\Claim-add.ico" />

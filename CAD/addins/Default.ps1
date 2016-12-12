@@ -446,7 +446,7 @@ function mHelp ([Int] $mHContext) {
 				$mHPage = "Index.html";
 			}
 		}
-		$mHelpTarget = $Env:ProgramData + "\Autodesk\Vault 2017\Extensions\DataStandard\" + $PSUICulture + "\HelpFiles\"+$mHPage
+		$mHelpTarget = $Env:ProgramData + "\Autodesk\Vault 2017\Extensions\DataStandard\HelpFiles\"+$mHPage
 		$mhelpfile = Invoke-Item $mHelpTarget 
 	}
 	catch

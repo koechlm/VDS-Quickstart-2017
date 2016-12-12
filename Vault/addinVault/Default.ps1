@@ -556,6 +556,9 @@ function mHelp ([Int] $mHContext) {
 			500 {
 				$mHPage = "File.html";
 			}
+			550 {
+				$mHPage = "OfficeFile.html";
+			}
 			600 {
 				$mHPage = "Folder.html";
 			}
@@ -566,7 +569,7 @@ function mHelp ([Int] $mHContext) {
 				$mHPage = "Index.html";
 			}
 		}
-		$mHelpTarget = "C:\ProgramData\Autodesk\Vault 2017\Extensions\DataStandard" + "\" + $PSCulture + "\HelpFiles\"+$mHPage
+		$mHelpTarget = "C:\ProgramData\Autodesk\Vault 2017\Extensions\DataStandard\HelpFiles\"+$mHPage
 		$mhelpfile = Invoke-Item $mHelpTarget 
 	}
 	Catch
