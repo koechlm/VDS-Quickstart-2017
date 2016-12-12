@@ -92,6 +92,7 @@
     <AppDesigner Include="Properties\" />
     <None Include="Vault\addinVault\AssociatedFiles.ps1" />
     <None Include="Vault\addinVault\Default.ps1" />
+    <None Include="Vault\addinVault\Default_QS-Extensions.ps1" />
     <None Include="Vault\addinVault\FileBOM.ps1" />
     <None Include="Vault\addinVault\Menus\CreateCustomObject.ps1" />
     <None Include="Vault\addinVault\Menus\CreateFile.ps1" />
@@ -198,6 +199,11 @@
     <Resource Include="en-US\UIStrings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Vault\Configuration\Item\Icons\docx.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\mdb.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\pdf.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\pptx.png" />
+    <Resource Include="Vault\Configuration\Item\Icons\xlsx.png" />
     <Resource Include="Vault\About.ico" />
     <Content Include="Vault\addinVault\VDSUtils.dll" />
     <Resource Include="Vault\Claim-add.ico" />
