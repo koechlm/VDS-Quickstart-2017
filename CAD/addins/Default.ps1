@@ -425,22 +425,22 @@ function mHelp ([Int] $mHContext) {
 	{
 		switch ($mHContext){
 			100 {
-				$mHPage = "Inventor.html";
+				$mHPage = "C.2Inventor.html";
 			}
 			110 {
-				$mHPage = "FrameGenerator.html";
+				$mHPage = "C.2.11FrameGenerator.html";
 			}
 			120 {
-				$mHPage = "DesignAccelerator.html";
+				$mHPage = "C.2.13DesignAccelerator.html";
 			}
 			130 {
-				$mHPage = "TubeAndPipe.html";
+				$mHPage = "C.2.12TubeandPipe.html";
 			}
 			140 {
-				$mHPage = "CableAndHarness.html";
+				$mHPage = "C.2.14CableandHarness.html";
 			}
 			200 {
-				$mHPage = "AutoCAD.html";
+				$mHPage = "C.3AutoCADAutoCAD.html";
 			}
 			Default {
 				$mHPage = "Index.html";
