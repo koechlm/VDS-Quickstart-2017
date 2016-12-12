@@ -555,16 +555,16 @@ function mHelp ([Int] $mHContext) {
 	{
 		Switch ($mHContext){
 			500 {
-				$mHPage = "File.html";
+				$mHPage = "V.2File.html";
 			}
 			550 {
-				$mHPage = "OfficeFile.html";
+				$mHPage = "V.3OfficeFile.html";
 			}
 			600 {
-				$mHPage = "Folder.html";
+				$mHPage = "V.1Folder.html";
 			}
 			700 {
-				$mHPage = "CustomObject.html";
+				$mHPage = "V.6CustomObject.html";
 			}
 			Default {
 				$mHPage = "Index.html";
