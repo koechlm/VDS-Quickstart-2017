@@ -1,4 +1,4 @@
-# VDS-Quickstart-2017
+# VDS-Quickstart-2017 - Multilanguage (Master = EN, select branch for de-DE)
 Vault Data Standard Quickstart 2017 Configuration Scope.
 Based on Vault Data Standard 2017 default, Quickstart intends to...
 
@@ -12,3 +12,4 @@ Add features to
   AutoCAD / AutoCAD Mechanical
   Inventor Professional
 
+Quickstart configuration is compatible to any Vault based on the default MFG Configuration.
