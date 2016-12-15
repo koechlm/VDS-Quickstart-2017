@@ -137,6 +137,15 @@ function InitializeWindow
 			{
 				$Prop["_Category"].Value = $UIString["CAT5"]
 			}
+			#region Quickstart - for imported folders easily set title to folder name on edit
+			If ($Prop["_EditMode"].Value) {
+				If ($Prop["_XLTN_TITLE"]){
+					IF ($Prop["_XLTN_TITLE"].Value -eq $null) {
+						$Prop["_XLTN_TITLE"].Value = $Prop["Name"].Value
+					}
+				}
+			}
+			#endregion Quickstart
 		}
 		"CustomObjectWindow"
 		{
