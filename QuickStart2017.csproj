@@ -92,6 +92,7 @@
     <AppDesigner Include="Properties\" />
     <None Include="Vault\addinVault\AssociatedFiles.ps1" />
     <None Include="Vault\addinVault\Default.ps1" />
+    <None Include="Vault\addinVault\Default_QS-Extensions.ps1" />
     <None Include="Vault\addinVault\FileBOM.ps1" />
     <None Include="Vault\addinVault\Menus\CreateCustomObject.ps1" />
     <None Include="Vault\addinVault\Menus\CreateFile.ps1" />
